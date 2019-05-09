@@ -1,1 +1,1 @@
-exports.converter = require('./libs/converter');
+exports.Converter = require('./libs/converter');
