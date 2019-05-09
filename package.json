@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "converting data for json api",
   "main": "index.js",
-  "repository": "test",
+  "repository": "git@github.com:kirillurgant/jsonapi-converter.git",
   "author": "Kirill Kvashonin <etozhkirill@yandex.ru> (http://kirillurgant.com/)",
   "license": "MIT",
   "dependencies": {
