@@ -20,7 +20,7 @@ class Converter {
   }
 
   getResource(data, type, options) {
-    if (!data) return null;
+    if (!data || !type) return null;
 
     const id = options.idKey ? data[options.idKey] : (data.id || data._id);
     if (isNil(id)) return null;
@@ -35,7 +35,7 @@ class Converter {
 
     const relationships = omit(this.reservedOptionKeys, options);
     if (!isEmpty(relationships)) {
-      result.relationships = keys(relationships).reduce((acc, resourceKey) => {
+      const resultRelationships = keys(relationships).reduce((acc, resourceKey) => {
         const dataItem = data[resourceKey];
         if (dataItem) {
           acc[resourceKey] = this.getDocument(dataItem, resourceKey, relationships[resourceKey]);
@@ -43,15 +43,17 @@ class Converter {
 
         return acc;
       }, {});
+
+      if (!isEmpty(resultRelationships)) result.relationships = resultRelationships;
     }
 
     return result;
   }
 
   getDocument(data, type = this.type, options = this.options) {
-    if (!data) return null; // TODO:
-
     const result = {};
+
+    if (!data || !type) return result;
 
     if (options.meta) result.meta = options.meta;
 
