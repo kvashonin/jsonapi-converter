@@ -131,7 +131,7 @@ The result will be something like:
     },
     {
       type: 'users',
-      id: 1,
+      id: 2,
       attributes: {
         name: 'Kate',
         email: 'kate@mail.com'
