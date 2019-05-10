@@ -10,13 +10,13 @@ API](http://jsonapi.org) (1.0 compliant).
 
 ### Converting data to JSON API
 ```javascript
-const jsonApiConverter = require('jsonapi-converter');
-const userConverter = new jsonApiConverter('users', {
+const { Converter } = require('jsonapi-converter');
+const userConverter = new Converter('users', {
   attributes: ['name', 'email']
 });
 ```
 
-The constructor `jsonApiConverter` takes two arguments:
+The constructor `Converter` takes two arguments:
 - `type`: The resource type.
 - `options`: The converting options.
 
@@ -30,8 +30,8 @@ Calling the `convert` method on the returned object will convert your `data` (ob
 ### Examples
 
 ```javascript
-const jsonApiConverter = require('jsonapi-converter');
-const userConverter = new jsonApiConverter('users', {
+const { Converter } = require('jsonapi-converter');
+const userConverter = new Converter('users', {
   attributes: ['name', 'email']
 });
 
@@ -62,8 +62,8 @@ The result will be something like:
 
 Converting with relationships:
 ```javascript
-const jsonApiConverter = require('jsonapi-converter');
-const userConverter = new jsonApiConverter('users', {
+const { Converter } = require('jsonapi-converter');
+const userConverter = new Converter('users', {
   meta: {
     count: 2
   }
