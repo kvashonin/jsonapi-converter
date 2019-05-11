@@ -25,6 +25,7 @@ Calling the `convert` method on the returned object will convert your `data` (ob
 #### Available options
 - `attributes`: An array of attributes to show in your resource
 - `idKey`: key of 'id' in your resource (by default it 'id' or '_id')
+- `meta`: document meta object
 - another resources (structure is fractaling)
 
 ### Examples

@@ -1,3 +1,4 @@
+const { isEmpty } = require('ramda');
 const { Converter } = require('../index');
 const { generateBySchema, generateArrayBySchema } = require('./faker');
 
@@ -10,11 +11,11 @@ describe('serializing some data', () => {
     expect(() => new Converter('type').convert('string')).toThrow();
   });
 
-  it('should return empty object', () => {
+  it('should return empty data object', () => {
     const someConverter = new Converter('type');
     const result = someConverter.convert();
 
-    expect(result).toEqual({});
+    expect(isEmpty(result.data)).toBeTruthy();
   });
 
   it('document shouldn\'t contain meta and resource shouldn\'t contain attributes', () => {

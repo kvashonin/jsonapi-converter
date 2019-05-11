@@ -51,7 +51,9 @@ class Converter {
   }
 
   getDocument(data, type = this.type, options = this.options) {
-    const result = {};
+    const result = {
+      data: {},
+    };
 
     if (!data || !type) return result;
 
