@@ -1,6 +1,6 @@
 /* eslint-disable no-underscore-dangle */
 const {
-  omit, pick, is, isNil, isEmpty, keys,
+  omit, pick, is, isEmpty, keys,
 } = require('ramda');
 
 const reservedOptionKeys = [
@@ -23,7 +23,6 @@ class Converter {
     if (!data || !type) return null;
 
     const id = options.idKey ? data[options.idKey] : (data.id || data._id);
-    if (isNil(id)) return null;
 
     const result = {
       id,
