@@ -1,6 +1,6 @@
 {
   "name": "jsonapi-converter",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "converting data for json api",
   "main": "index.js",
   "repository": "git@github.com:kirillurgant/jsonapi-converter.git",
